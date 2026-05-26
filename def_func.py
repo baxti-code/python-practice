@@ -95,8 +95,71 @@
 # x = reverse_string("String")
 # print(x)
 
-def calculate_tip(bill, tip_percentage = 15):
-    return bill * (tip_percentage/100)
+# def calculate_tip(bill, tip_percentage = 15):
+#     return bill * (tip_percentage/100)
 
-x = calculate_tip(100, 20)
-print(x)
+# x = calculate_tip(100, 20)
+# print(x)
+
+# def modify_number(x):
+#   """This function tries to modify the input number."""
+#   x = x + 1
+#   print(f"Inside function: x = {x}")
+
+# number = 10
+# modify_number(number)  # Output: Inside function: x = 11
+# print(f"Outside function: number = {number}")  # Output: Outside function: number = 10
+
+# def modify_list(my_list):
+#   """This function modifies the input list."""
+#   my_list.append(4)
+#   print(f"Inside function: my_list = {my_list}")
+
+# my_list = [1, 2, 3]
+# modify_list(my_list)  # Output: Inside function: my_list = [1, 2, 3, 4]
+# print(f"Outside function: my_list = {my_list}")  # Output: Outside function: my_list = [1, 2, 3, 4]
+
+# def modify_list_safely(my_list):
+#   """This function modifies a copy of the input list."""
+#   new_list = my_list.copy()  # Create a copy of the list
+#   new_list.append(4)
+#   print(f"Inside function: new_list = {new_list}")
+
+# my_list = [1, 2, 3]
+# modify_list_safely(my_list)  # Output: Inside function: new_list = [1, 2, 3, 4]
+# print(f"Outside function: my_list = {my_list}")  # Output: Outside function: my_list = [1, 2, 3]
+
+# def calculate_area(length, width):
+#     return length * width
+
+# print(calculate_area(5, width= 4))
+# print(calculate_area( width= 4, length= 10))
+# print(calculate_area(6, 9))
+
+
+# def add_item(my_list, my_item):
+#     new_list = my_list.copy()
+#     new_list.append(my_item)
+#     return new_list
+
+
+# my_list = [1, 2, 3, 4]
+# print(my_list)
+# print(add_item(my_list, 5))
+
+
+# def format_address(street, city, state):
+#     return f"{street}, {city}, {state}"
+
+# print(format_address(street="Chortoq", city="Dustlik", state="Jizzakh"))
+
+# def greet(greeting="Hello"):
+#     return greeting
+
+# print(greet("Hi brother, i wish you all the best"))
+# print(greet())
+
+text = "Hello World"
+words = text.split()
+back = " ".join(words)
+print(back)
