@@ -226,17 +226,204 @@ global_variable = 10  # Global scope
 # print(f"Content of line {line_number_to_get}: {line_content}")
 
 
-def chunked_processing(filename, chunk_size):
-    try:
-        with open(filename, "r") as file:
-            while True:
-                chunk = file.read(chunk_size)
-                if not chunk:
-                    break
-                print(chunk)
-    except FileNotFoundError:
-        print("This file not found.")
-    except Exception as e:
-        print(f"Error occured - {e}")
+# def chunked_processing(filename, chunk_size):
+#     try:
+#         with open(filename, "r") as file:
+#             while True:
+#                 chunk = file.read(chunk_size)
+#                 if not chunk:
+#                     break
+#                 print(chunk)
+#     except FileNotFoundError:
+#         print("This file not found.")
+#     except Exception as e:
+#         print(f"Error occured - {e}")
 
-chunked_processing("report.txt", 1024)
+#  chunked_processing("report.txt", 1024)
+
+#  Example: Writing numbers to a file
+# try:
+#     with open('numbers.txt', 'w') as file:
+#         number1 = 10
+#         number2 = 3.14
+#         file.write(str(number1) + '\n')
+#         file.write(str(number2) + '\n')
+#     print("Numbers written to numbers.txt successfully.")
+# except Exception as e:
+#     print(f"An error occurred: {e}")
+
+# # Verify the file content:
+# # numbers.txt will contain:
+# # 10
+# # 3.14
+
+# # Example: Using 'x' mode to create a new file
+# try:
+#     with open('new_file.txt', 'x') as file:
+#         file.write('This is the first line in the new file.\n')
+#     print("new_file.txt created and data written successfully.")
+# except FileExistsError:
+#     print("Error: new_file.txt already exists.")
+# except Exception as e:
+#     print(f"An error occurred: {e}")
+
+# Example: Writing a list to a file
+# try:
+#     my_list = ['apple', 'banana', 'cherry']
+#     with open('fruits.txt', 'w') as file:
+#         for fruit in my_list:
+#             file.write(fruit + '\n')
+#     print("List written to fruits.txt successfully.")
+# except Exception as e:
+#     print(f"An error occurred: {e}")
+
+# Verify the file content:
+# fruits.txt will contain:
+# apple
+# banana
+# cherry
+
+# Example: Writing a dictionary to a file (simplified, without JSON)
+# try:
+#     my_dict = {'name': 'Alice', 'age': 30, 'city': 'New York'}
+#     with open('person.txt', 'w') as file:
+#         for key, value in my_dict.items():
+#             file.write(f'{key}: {value}\n')
+#     print("Dictionary written to person.txt successfully.")
+# except Exception as e:
+#     print(f"An error occurred: {e}")
+
+# Verify the file content:
+# person.txt will contain:
+# name: Alice
+# age: 30
+# city: New York
+
+# with open("user_input.txt", "w") as file:
+#     while True:
+#         line = input("Enter the line of text you want.(or fill done): ")
+#         if line.lower() == "done":
+#             break
+#         file.write(line +'\n')
+
+
+# def names(my_list):
+#     with open("name_list.txt", "a") as file :
+#         for name in my_list:
+#             file.write(name + "\n")
+
+# mlist = ["Bek", 'Jack', "Heck"]
+# names(mlist)
+
+# with open("num1-100.txt", "a") as file :
+#     for number in range(1, 101):
+#         file.write(str(number) + "\n")
+
+
+# def calculate_sum_from_file(filename):
+#     total = 0
+#     try:
+#         file = open(filename, "r")
+#         for line in file:
+#             try:
+#                 number = float(line.strip()) # Convert each line to a float
+#                 total += number
+#             except ValueError:
+#                 print(f"Warning: Skipping invalid data: {line.strip()}")
+#         return total
+#     except FileNotFoundError:
+#         print(f"Error: The file '{filename}' was not found.")
+#         return None
+#     finally:
+#         if 'file' in locals() and file:  # Ensure 'file' is defined and open before closing
+#             file.close()
+#             print("File closed.")
+
+# # Example usage
+# filename = "numbers.txt"
+# file = open(filename, "w") # Creating the numbers file
+# file.write("1\n")
+# file.write("2\n")
+# file.write("abc\n")
+# file.write("4\n")
+# file.close()
+
+# sum_of_numbers = calculate_sum_from_file(filename)
+
+# if sum_of_numbers is not None:
+#     print(f"The sum of the numbers in the file is: {sum_of_numbers}")
+
+# def smth():
+#     filename = input("Enter file name: ")
+#     content = input("Enter something you want to write: ")
+    
+#     if not filename or not content:  # ← validation!
+#         print("Filename and content cannot be empty!")
+#         return None
+    
+#     try:
+#         with open(filename, "w") as file:
+#             file.write(content)
+#             print(f"Successfully written to {filename}!")
+#     except IOError as e:
+#         print(f"Error writing to file: {e}")
+#         return None
+
+# smth()
+# def data_conv():
+#     numbers = []
+#     try:
+#         with open("data.txt", "r") as file:
+#             for line in file:
+#                 try:
+#                     number = float(line.strip())
+#                     numbers.append(number)
+#                 except ValueError:
+#                     print(f"Invalid value: {line.strip()}")
+        
+#         average = sum(numbers) / len(numbers)  # ← average hisoblash
+#         print(f"Average: {average:.2f}")
+#         return numbers
+
+#     except FileNotFoundError:
+#         print("data.txt doesn't exist")
+#         return None
+#     finally:
+#         print("File closed.")
+
+# data_conv()
+
+            
+# def log_analys():
+#     error = 0
+#     info = 0
+#     warning = 0
+#     try:
+#         with open("application.log", "r") as file:
+#             for line in file:
+#                 if "ERROR" in line:
+#                     error+=1
+#                 elif "WARNING" in line:
+#                     warning+=1
+#                 elif "INFO" in line:
+#                     info+=1
+#         print(f"Warning: {warning} \n Info: {info} \n Error : {error}")
+#     except FileNotFoundError:
+#         print("Don't exist")
+#         return None
+    
+# log_analys()
+
+import os
+
+def safe_delete(filename):
+    try:
+        os.remove(filename)
+        print(f"{filename} deleted successfully!")
+    except FileNotFoundError:
+        print(f"{filename} not found!")
+    except PermissionError:
+        print(f"No permission to delete {filename}!")
+
+filename = input("Enter file name to delete: ")
+safe_delete(filename)
