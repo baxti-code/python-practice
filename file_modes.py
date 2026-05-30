@@ -162,11 +162,81 @@ global_variable = 10  # Global scope
 #     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 #     file.write(f"[{timestamp}] {message}\n")
 
-from datetime import datetime
+# from datetime import datetime
 
-file_name = input("Enter a file name: ")
+# file_name = input("Enter a file name: ")
 
-with open(file_name, "a") as file:
-    timer = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
-    message = input("message? ")
-    file.write(f"[{timer}] {message} \n")
+# with open(file_name, "a") as file:
+#     timer = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+#     message = input("message? ")
+#     file.write(f"[{timer}] {message} \n")
+
+# filename = "report.txt"
+
+# try:
+#     with open(filename, 'r') as file:
+#         line = file.readline()
+#         while line:
+#             print(line.strip())
+#             line = file.readline()
+# except FileNotFoundError:
+#     print(f"Error: The file '{filename}' was not found.")
+# except Exception as e:
+#     print(f"An error occurred: {e}")
+
+# with open("report.txt", "r") as file:
+#     chunk1 = file.read(10)
+#     print(chunk1, "\n")
+#     chunk2 = file.read(15)
+#     print(chunk2)
+    
+# with open("report.txt", "r") as file:
+#     content = file.read()
+#     words ="".join(x for x in content if x.isalnum() or x.isspace())
+#     words = words.split()
+#     print(f"Word count: {len(words)}")
+
+# def get_line(filename, line_number):
+#     with open(filename, "r") as file:
+#         for i in range(line_number):
+#             line = file.readline()  # ← har safar bitta qator o'qiydi
+#         return line
+
+# # line_number out of range bo'lsa nima qaytaradi?
+# print(get_line("report.txt", 5))
+
+# def get_line(filename, line_number):
+#     """Retrieves a specific line from a file.
+#     Returns an error message if the line number is out of range.
+#     """
+#     try:
+#         with open(filename, 'r') as file:
+#             for i, line in enumerate(file, 1):
+#                 if i == line_number:
+#                     return line.strip()
+#             return f"Error: Line {line_number} not found in the file."
+#     except FileNotFoundError:
+#         return f"Error: The file '{filename}' was not found."
+#     except Exception as e:
+#         return f"An error occurred: {e}"
+# #Example usage of exercise 2
+# file_name = "report.txt"
+# line_number_to_get = 5
+# line_content = get_line(file_name, line_number_to_get)
+# print(f"Content of line {line_number_to_get}: {line_content}")
+
+
+def chunked_processing(filename, chunk_size):
+    try:
+        with open(filename, "r") as file:
+            while True:
+                chunk = file.read(chunk_size)
+                if not chunk:
+                    break
+                print(chunk)
+    except FileNotFoundError:
+        print("This file not found.")
+    except Exception as e:
+        print(f"Error occured - {e}")
+
+chunked_processing("report.txt", 1024)
