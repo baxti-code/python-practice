@@ -1,0 +1,1 @@
+from .equations import solve_quadratic, solve_linear
