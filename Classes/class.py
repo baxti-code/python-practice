@@ -86,16 +86,73 @@
 
 #encapsulation
 
-class BankAccount:
-    def __init__(self, balance):
-        self.__balance = balance  # ← __ (private)
+# class BankAccount:
+#     def __init__(self, balance):
+#         self.__balance = balance  # ← __ (private)
     
-    def deposit(self, amount):
-        self.__balance += amount
+#     def deposit(self, amount):
+#         self.__balance += amount
     
-    def get_balance(self):
-        return self.__balance
+#     def get_balance(self):
+#         return self.__balance
 
-account = BankAccount(1000)
-account.deposit(500)
-print(account.get_balance())  # 1500
+# account = BankAccount(1000)
+# account.deposit(500)
+# print(account.get_balance())  # 1500
+
+
+#Polymorphism
+
+# class Animal:
+#     def speak(self):
+#         pass
+
+# class Dog(Animal):
+#     def speak(self):
+#         return "Woof!"
+
+# class Cat(Animal):
+#     def speak(self):
+#         return "Meow!"
+
+# class Bird(Animal):
+#     def speak(self):
+#         return "Tweet!"
+
+# animals = [Dog(), Cat(), Bird()]
+
+# for animal in animals:
+#     print(animal.speak())
+
+class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+    
+    def area(self):
+        return self.length * self.width
+
+class Triangle(Shape):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+    
+    def area(self):
+        return 0.5 * self.base * self.height
+
+shapes = [Circle(5), Rectangle(4, 6), Triangle(3, 8)]
+
+for shape in shapes:
+    print(f"{shape.__class__.__name__}: {shape.area()}")
+
