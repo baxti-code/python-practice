@@ -11,6 +11,8 @@ In this repository, I document my Python learning journey — writing small scri
 | `Modules/` | datetime, json, os modules |
 | `File_handling/` | File read/write/append operations |
 | `Projects/` | Small projects (calculator, text editor) |
+| `Classes/` | All about classes(creating class and object, inheritance, polymorphism ...) |
+
 
 ## 🛠 Tools
 - Python 3
