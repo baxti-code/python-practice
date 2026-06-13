@@ -124,35 +124,60 @@
 # for animal in animals:
 #     print(animal.speak())
 
-class Shape:
-    def area(self):
-        pass
+# class Shape:
+#     def area(self):
+#         pass
 
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
+# class Circle(Shape):
+#     def __init__(self, radius):
+#         self.radius = radius
     
-    def area(self):
-        return 3.14 * self.radius ** 2
+#     def area(self):
+#         return 3.14 * self.radius ** 2
 
-class Rectangle(Shape):
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
+# class Rectangle(Shape):
+#     def __init__(self, length, width):
+#         self.length = length
+#         self.width = width
     
-    def area(self):
-        return self.length * self.width
+#     def area(self):
+#         return self.length * self.width
 
-class Triangle(Shape):
-    def __init__(self, base, height):
-        self.base = base
-        self.height = height
+# class Triangle(Shape):
+#     def __init__(self, base, height):
+#         self.base = base
+#         self.height = height
     
-    def area(self):
-        return 0.5 * self.base * self.height
+#     def area(self):
+#         return 0.5 * self.base * self.height
 
-shapes = [Circle(5), Rectangle(4, 6), Triangle(3, 8)]
+# shapes = [Circle(5), Rectangle(4, 6), Triangle(3, 8)]
 
-for shape in shapes:
-    print(f"{shape.__class__.__name__}: {shape.area()}")
+# for shape in shapes:
+#     print(f"{shape.__class__.__name__}: {shape.area()}")
 
+
+class Student:
+  def __init__(self, name):
+    self.name = name
+    self.__grade = 0
+
+  def set_grade(self, grade):
+    if 0 <= grade <= 100:
+      self.__grade = grade
+    else:
+      print("Grade must be between 0 and 100")
+
+  def get_grade(self):
+    return self.__grade
+
+  def get_status(self):
+    if self.__grade >= 60:
+      return "Passed"
+    else:
+      return "Failed"
+
+student = Student("Emil")
+student.set_grade(85)
+print(student.get_grade())
+print(student.get_status())  
